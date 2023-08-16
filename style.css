@@ -1,0 +1,476 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #f4f4f4;
+}
+.option-btn {
+  border: 0;
+  background-color: transparent;
+}
+.winner {
+  border-radius: 350px;
+  background: rgba(46, 154, 37, 0.39);
+  box-shadow: 0px 1px 62px 0px rgba(0, 0, 0, 0.13);
+}
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #8cc461;
+  display: grid;
+}
+.view {
+  min-height: 80vh;
+  width: 70%;
+  margin: auto;
+  background-color: none;
+}
+.in-game {
+}
+
+.post-game {
+}
+.message {
+  position: relative;
+  height: 50vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: hidden;
+}
+.message img {
+  object-fit: contain;
+  object-position: cover;
+  width: 20%;
+  height: auto;
+}
+.score-display {
+  position: relative;
+  min-height: 20vh;
+  border: 2px solid #f4f4f4;
+  border-radius: 20px;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title {
+  font-size: 2.5em;
+  font-weight: 800;
+}
+.title span {
+  display: flex;
+}
+.scores {
+  display: flex;
+  height: 20vh;
+  width: 30%;
+  justify-content: space-evenly;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em 1em;
+  height: 100%;
+  width: 8em;
+  background-color: #f4f4f4;
+  color: #000;
+  border-radius: 10px;
+}
+.score span {
+  color: #000;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+.score .value {
+  color: #000;
+  font-size: 2.5em;
+  font-weight: 800;
+}
+.game-display {
+  width: 100%;
+  height: 60vh;
+  position: relative;
+  display: grid;
+
+  place-content: center;
+}
+.result-display {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60vh;
+}
+.result-display .option {
+  position: absolute;
+  width: 12em;
+  height: 12em;
+  background-color: #fff;
+  display: grid;
+  place-content: center;
+  border-radius: 100%;
+  border: 15px solid #0074b6;
+  cursor: pointer;
+  z-index: 15;
+}
+.button-winner {
+  border: 15px solid #bd00ff !important;
+}
+
+.button-loser {
+  border: 15px solid #ffa943 !important;
+}
+
+.player-choice {
+  width: 30%;
+  min-height: 40vh;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 15;
+}
+.computer-choice {
+  width: 30%;
+  min-height: 40vh;
+  position: absolute;
+  top: 20%;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 15;
+}
+.triangle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotate(180deg) scale(1.2);
+}
+.gg-shape-triangle {
+  position: relative;
+  transform: scale(var(--ggs, 10));
+  color: black;
+  width: 22px;
+  height: 17px;
+  border-left: 3px solid transparent;
+  border-bottom: 3px solid;
+}
+.gg-shape-triangle,
+.gg-shape-triangle::before {
+  display: block;
+  box-sizing: border-box;
+  border-right: 3px solid transparent;
+}
+.gg-shape-triangle::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-left: 3px solid;
+  border-top: 3px solid;
+  border-bottom: 3px solid transparent;
+  transform: rotate(45deg) skew(10deg, 10deg);
+  left: -2px;
+  bottom: -13px;
+}
+
+.option {
+  position: absolute;
+  width: 8em;
+  height: 8em;
+  background-color: #fff;
+  display: grid;
+  place-content: center;
+  border-radius: 100%;
+  border: 15px solid;
+  cursor: pointer;
+}
+.game-display .option-1 {
+  border-color: #0074bc;
+  left: 30%;
+  top: 15%;
+}
+.game-display .option-2 {
+  border-color: #bd00ff;
+  right: 27%;
+  top: 15%;
+}
+.game-display .option-3 {
+  border-color: #ffa943;
+  left: 45%;
+  bottom: 5%;
+}
+
+.final-result {
+  min-height: 25vh;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: space-between;
+
+  text-align: center;
+}
+
+.final-result p {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 0.2em;
+}
+.message-text {
+  text-align: center;
+  letter-spacing: 5px;
+  font-size: 48px;
+  font-weight: 900;
+}
+.Btn {
+  color: #000;
+  font-size: 24px;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: none;
+  letter-spacing: 3px;
+}
+
+.circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid transparent;
+  z-index: 7;
+}
+.hide {
+  display: none;
+}
+
+.circle > .circle {
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  background-color: #66b248;
+  /* border: 2px solid #8ef287; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 8;
+}
+
+.circle > .circle > .circle {
+  width: 85%;
+  height: 85%;
+  position: absolute;
+  background-color: #32a62f;
+  /* border: 2px solid #5faa5a; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+}
+
+.circle > .circle > .circle > .circle {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  background-color: #289a27;
+  /* border: 2px solid #3d7d3a; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#trophy {
+  z-index: 15;
+}
+.texts {
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  align-items: center;
+}
+.text {
+  font-size: 32px;
+  font-weight: 700;
+}
+.star-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 auto;
+  height: 80%;
+}
+.star-container-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 auto;
+  height: 80%;
+  transform: rotate(180deg);
+}
+
+.star {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+
+.star:nth-child(1) {
+  top: 20%;
+  left: 40%;
+  transform: rotate(45deg);
+  width: 32px;
+  height: 33px;
+}
+
+.star:nth-child(2) {
+  top: 40%;
+  left: 45%;
+  transform: rotate(-30deg);
+  width: 52px;
+  height: 53px;
+}
+
+.star:nth-child(3) {
+  top: 10%;
+  left: 38%;
+  transform: rotate(60deg);
+  width: 15px;
+  height: 15px;
+}
+
+.star:nth-child(4) {
+  top: 50%;
+  left: 32%;
+  transform: rotate(30deg);
+  width: 20px;
+  height: 20px;
+}
+
+.star:nth-child(5) {
+  top: 65%;
+  left: 60%;
+  transform: rotate(120deg);
+  width: 55px;
+  height: 55px;
+}
+
+.star:nth-child(6) {
+  top: 80%;
+  left: 40%;
+  transform: rotate(-45deg);
+  width: 25px;
+  height: 25px;
+}
+
+.star:nth-child(7) {
+  top: 26%;
+  right: 30%;
+  transform: rotate(-30deg);
+  width: 40px;
+  height: 40px;
+}
+
+.star:nth-child(8) {
+  top: 40%;
+  right: 50%;
+  transform: rotate(60deg);
+  width: 28px;
+  height: 28px;
+}
+
+.star:nth-child(9) {
+  top: 70%;
+  left: 70%;
+  transform: rotate(-15deg);
+  width: 30px;
+  height: 30px;
+}
+
+.star:nth-child(10) {
+  top: 80%;
+  right: 55%;
+  transform: rotate(45deg);
+  width: 50px;
+  height: 50px;
+}
+
+.star:nth-child(11) {
+  bottom: 40%;
+  right: 36%;
+  transform: rotate(60deg);
+  width: 45px;
+  height: 45px;
+}
+.footer {
+  min-height: 10vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.secondary-btn {
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 8px;
+  border: 2px #f4f4f4 solid;
+  padding: 0.5em 1em;
+  background-color: transparent;
+  margin-right: 2em;
+  cursor: pointer;
+}
+.rulesContainer {
+  z-index: 15;
+  position: relative;
+  padding: 1.5em;
+  position: absolute;
+  bottom: 10vh;
+  right: 5%;
+  width: 20%;
+  border-radius: 13px;
+  border: 7px solid #fff;
+  background: #004429;
+}
+.rulesContainer h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+.rulesContainer li::marker {
+  color: #ffd600;
+}
+.closeButton {
+  background-color: #f00;
+  border: 5px #fff solid;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-weight: 900;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  top: -30px;
+  right: -30px;
+}
