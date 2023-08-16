@@ -57,13 +57,11 @@ rulesButton.addEventListener('click', () => {
 });
 
 closeButton.addEventListener('click', () => {
-  console.log('hide');
   rules.classList.toggle('hide');
 });
 
 playAgainButton.forEach((button) => {
   button.addEventListener('click', () => {
-    console.log('ee');
     activateGameView();
     activateInGameView();
   });
@@ -81,7 +79,6 @@ choiceButtons.forEach((button) =>
     playerChoiceImg.src = choicesArray[playerChoice];
     computerChoiceImg.src = choicesArray[computerChoice];
     const winner = determineWinner(playerChoice, computerChoice);
-    console.log(winner);
 
     playerHighlight.classList.add('hide');
     computerHighlight.classList.add('hide');
@@ -103,8 +100,6 @@ choiceButtons.forEach((button) =>
       playerHighlight.classList.remove('hide');
       playerChoiceImg.parentElement.classList.add('button-winner');
       computerChoiceImg.parentElement.classList.add('button-loser');
-      console.log(computerChoiceImg.parentElement.classList);
-      console.log(playerChoiceImg.parentElement.classList);
     } else if (winner === 'computer') {
       msg1.innerText = 'You Lost';
       msg2.innerText = 'Against Computer';
@@ -114,8 +109,6 @@ choiceButtons.forEach((button) =>
       // Add winner class and remove loser class
       computerChoiceImg.parentElement.classList.add('button-winner');
       playerChoiceImg.parentElement.classList.add('button-loser');
-      console.log(playerChoiceImg.parentElement.classList);
-      console.log(computerChoiceImg.parentElement.classList);
     } else {
       msg1.innerText = 'Tie Up';
       msg2.innerText = '';
