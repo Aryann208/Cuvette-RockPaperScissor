@@ -17,7 +17,7 @@ const inGame = document.getElementById('inGame');
 const postGame = document.getElementById('postGame');
 const gameDisplay = document.getElementById('gameDisplay');
 const resultDisplay = document.getElementById('resultDisplay');
-const playAgainButton = document.getElementById('playAgain');
+const playAgainButton = document.querySelectorAll('.Btn');
 const nextButton = document.getElementById('next');
 const rulesButton = document.getElementById('rules');
 const rules = document.querySelector('.rulesContainer');
@@ -61,9 +61,12 @@ closeButton.addEventListener('click', () => {
   rules.classList.toggle('hide');
 });
 
-playAgainButton.addEventListener('click', () => {
-  activateGameView();
-  activateInGameView();
+playAgainButton.forEach((button) => {
+  button.addEventListener('click', () => {
+    console.log('ee');
+    activateGameView();
+    activateInGameView();
+  });
 });
 
 nextButton.addEventListener('click', () => {
